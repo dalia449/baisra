@@ -1,0 +1,162 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بصيرة</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#F5F7FB;
+}
+
+.screen{
+display:none;
+padding:30px;
+}
+
+.active{
+display:block;
+}
+
+.center{
+text-align:center;
+margin-top:120px;
+}
+
+button{
+background:#4F46E5;
+color:white;
+border:none;
+padding:15px 25px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.cards{
+display:grid;
+gap:15px;
+margin-top:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+cursor:pointer;
+}
+
+.alert{
+background:white;
+padding:15px;
+border-radius:10px;
+border-right:5px solid #EF4444;
+margin-bottom:10px;
+}
+
+.progress{
+height:10px;
+background:#eee;
+border-radius:10px;
+overflow:hidden;
+}
+
+.bar{
+height:100%;
+width:40%;
+background:#4F46E5;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Landing -->
+<div class="screen active" id="landing">
+<div class="center">
+<h1>بصيرة</h1>
+<p>رؤية ذكية لمستقبل تعليمي أفضل</p>
+<br>
+<button onclick="show('dashboard')">ابدأ الآن</button>
+</div>
+</div>
+
+<!-- Dashboard -->
+<div class="screen" id="dashboard">
+<h2>Dashboard</h2>
+
+<div class="cards">
+<div class="card" onclick="show('student')">
+متوسط الأداء 78%
+</div>
+
+<div class="card" onclick="show('alerts')">
+3 طلاب في خطر
+</div>
+
+<div class="card" onclick="show('ai')">
+المساعد الذكي AI
+</div>
+</div>
+</div>
+
+<!-- Student -->
+<div class="screen" id="student">
+<h2>ملف الطالب</h2>
+
+<div class="card">Math 65%</div>
+<div class="card">English 82%</div>
+
+<br>
+<button onclick="show('plan')">خطة التحسين</button>
+</div>
+
+<!-- Alerts -->
+<div class="screen" id="alerts">
+<h2>التنبيهات</h2>
+
+<div class="alert">Ahmed - Math Drop</div>
+<div class="alert">Sara - Low Attendance</div>
+
+</div>
+
+<!-- Plan -->
+<div class="screen" id="plan">
+<h2>Improvement Plan</h2>
+
+<p>Practice Algebra</p>
+<p>Watch Lesson Video</p>
+
+<div class="progress">
+<div class="bar"></div>
+</div>
+
+</div>
+
+<!-- AI -->
+<div class="screen" id="ai">
+<h2>AI Support</h2>
+
+<div class="card">
+We detected a learning issue in Math
+</div>
+
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.screen').forEach(s=>{
+s.classList.remove('active')
+})
+document.getElementById(id).classList.add('active')
+}
+</script>
+
+</body>
+</html>
+```
